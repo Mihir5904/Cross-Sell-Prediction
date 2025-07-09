@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Insurance Response Predictor</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        padding: 40px;
+      }
+      h2 {
+        color: #333;
+      }
+      form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      input[type="text"], input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Insurance Response Predictor</h2>
+    <form action="/webpredict" method="post">
+
+      Age: <input name="Age" type="number"><br>
+      
+      Vehicle Age: 
+      <select name="Vehicle_Age">
+        <option value="less_than_1">Less than 1 year</option>
+        <option value="between_1_2">1-2 years</option>
+        <option value="more_than_2">More than 2 years</option>
+      </select><br>
+
+      Annual Premium: <input name="Annual_Premium" type="number"><br>
+
+      Gender:
+      <select name="Gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select><br>
+
+      Damage History:
+      <select name="Damage">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select><br>
+
+      Driving License: <input type="checkbox" name="Driving_License" value="1"><br>
+
+      Vintage (in days): <input name="Vintage_days" type="number"><br>
+
+      Region Code: <input name="Region_Code" type="number"><br>
+
+      Previously Insured:
+      <select name="Previously_Insured">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select><br>
+
+      <input type="submit" value="Predict">
+    </form>
+    <a href="/moreinfo">more info</a>
+  </body>
+</html>
